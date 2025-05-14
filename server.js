@@ -38,6 +38,12 @@ const apiLimiter = rateLimit({
 })
 app.use("/api/", apiLimiter)
 
+// Dans server.js du backend
+app.use(cors({
+  origin: ['https://votre-domaine-vercel.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}))
+
 // Swagger configuration
 const swaggerOptions = {
   definition: {
